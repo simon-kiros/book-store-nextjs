@@ -1,0 +1,72 @@
+export const data = [
+{
+"title": "This is book",
+"description": "This book is ~",
+"discountRate": 10,
+"coverImage": "https://images-na.ssl-images-amazon.com/images/I/51Ga5GuElyL._AC_SX184_.jpg",
+"price": 100
+},
+{
+"title": "This is book",
+"description": "This book is ~",
+"discountRate": 10,
+"coverImage": "https://images-na.ssl-images-amazon.com/images/I/51Ga5GuElyL._AC_SX184_.jpg",
+"price": 100
+},
+{
+"title": "This is book",
+"description": "This book is ~",
+"discountRate": 10,
+"coverImage": "https://images-na.ssl-images-amazon.com/images/I/51Ga5GuElyL._AC_SX184_.jpg",
+"price": 100
+},
+{
+"title": "This is book",
+"description": "This book is ~",
+"discountRate": 10,
+"coverImage": "https://images-na.ssl-images-amazon.com/images/I/51Ga5GuElyL._AC_SX184_.jpg",
+"price": 100
+},
+{
+"title": "This is book",
+"description": "This book is ~",
+"discountRate": 10,
+"coverImage": "https://images-na.ssl-images-amazon.com/images/I/51Ga5GuElyL._AC_SX184_.jpg",
+"price": 100
+},
+{
+"title": "This is book",
+"description": "This book is ~",
+"discountRate": 10,
+"coverImage": "https://images-na.ssl-images-amazon.com/images/I/51Ga5GuElyL._AC_SX184_.jpg",
+"price": 100
+},
+{
+"title": "This is book",
+"description": "This book is ~",
+"discountRate": 10,
+"coverImage": "https://images-na.ssl-images-amazon.com/images/I/51Ga5GuElyL._AC_SX184_.jpg",
+"price": 100
+},
+{
+"title": "This is book",
+"description": "This book is ~",
+"discountRate": 10,
+"coverImage": "https://images-na.ssl-images-amazon.com/images/I/51Ga5GuElyL._AC_SX184_.jpg",
+"price": 100
+},
+{
+"title": "This is book",
+"description": "This book is ~",
+"discountRate": 10,
+"coverImage": "https://images-na.ssl-images-amazon.com/images/I/51Ga5GuElyL._AC_SX184_.jpg",
+"price": 100
+},
+{
+"title": "This is book",
+"description": "This book is ~",
+"discountRate": 10,
+"coverImage": "https://images-na.ssl-images-amazon.com/images/I/51Ga5GuElyL._AC_SX184_.jpg",
+"price": 100
+}
+]
