@@ -50,7 +50,7 @@ function Books() {
 
   if (isLoading) return <span>Loading...</span>;
 
-  if (isError) return <span>Error: {error.message}</span>;
+  if (isError) return <span>Error: {error}</span>;
   function aaa() {
     fetch(endPoint)
       .then((response) => {
