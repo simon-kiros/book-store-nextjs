@@ -1,8 +1,6 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-//import ReduxProvider from "redux/reduxProvider";
-//import "bootstrap/dist/css/bootstrap.min.css";
-import '../styles/global.css';
+import "../styles/global.css";
 
 const queryClient = new QueryClient();
 
