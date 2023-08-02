@@ -15,6 +15,15 @@
   border-radius: 50px;
 }
 
-.detail, .detail-image {
-  min-width: 500px;
+.detail-image {
+  min-width: 400px;
+}
+
+.comment-section {
+  min-width: 350px;
+}
+
+.detail {
+  padding-left: 15rem;
+  padding-right: 15rem;
 }
