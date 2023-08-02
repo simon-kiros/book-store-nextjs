@@ -7,30 +7,26 @@ import Link from "next/link";
 function Detail() {
   return (
     <>
-      <div className="flex justify-center py-4">
+      <div className="flex flex-row px-80 py-4 detail">
         <div className="flex flex-col" style={{ width: "500px" }}>
           <div className="flex">
-            <Link href="/books">
-              {" "}
-              <span className="py-1">
-                {" "}
-                <FaLessThan />
-              </span>
+            <Link href="/books" className="flex flex-col justify-center">
+              <FaLessThan />
             </Link>
 
             <div className="flex justify-center w-full py-2">
-              <span className="font-bold"> Book title</span>
+              <span className="text-xl font-bold"> 레이블라우스</span>
             </div>
           </div>
           <div className="flex flex-row justify-center">
             <img
-              className="card-image"
+              className="detail-image"
               src="https://images-na.ssl-images-amazon.com/images/I/51Ga5GuElyL._AC_SX184_.jpg"
               style={{ width: "100%", height: "450px" }}
             />
           </div>
-          <div className="title px-2">
-            <span className="font-bold px-4">TITLE</span>
+          <div className="title py-4">
+            <span className="text-xl font-bold px-4">레이블라우스</span>
           </div>
           <div className="flex flex-row px-4 ">
             <p>
@@ -43,8 +39,8 @@ function Detail() {
             </p>
           </div>
           <div className="flex flex-row px-2 justify-between font-bold py-5">
-            <span className="text-red-600">10</span>
-            <span>10</span>
+            <span className="font-bold text-red-600">10%</span>
+            <span className="font-bold">57,600원</span>
           </div>
           <Comment />
         </div>

@@ -14,3 +14,7 @@
   height: 30px;
   border-radius: 50px;
 }
+
+.detail, .detail-image {
+  min-width: 500px;
+}
