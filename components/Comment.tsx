@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 function Comment() {
   return (
@@ -8,7 +8,7 @@ function Comment() {
           <img
             className="card-image"
             src="https://images-na.ssl-images-amazon.com/images/I/51Ga5GuElyL._AC_SX184_.jpg"
-            style={{ width: '50px', height: '50px' }}
+            style={{ width: "50px", height: "50px" }}
           />
           <h1>titile</h1>
         </div>
