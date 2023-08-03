@@ -43,6 +43,7 @@ function Detail() {
               <span className="font-bold text-red-600">10%</span>
               <span className="font-bold">57,600원</span>
             </div>
+            <div className="w-full bg-gray-100 mb-5" style={{ height: "2px" }}></div>
             <div className="px-4">
               <CommentSection />
             </div>

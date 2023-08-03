@@ -1,3 +1,5 @@
+Simon Kiros / +251-987977695
+
 # Bookstore-client
 
 Bookstore Nextjs client project Description

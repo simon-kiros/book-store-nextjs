@@ -7,12 +7,14 @@ import Link from "next/link";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useRouter } from "next/router";
 import { BookType } from "@/types/BookType";
+import { useRecoilState } from "recoil";
+import { bookAtom } from "@/recoil/bookAtom";
 
 const endPoint = `http://15.165.74.54:3000/?page=`;
 
 function Books() {
   const [hasMore, setHasMore] = useState(true);
-  const [books, setBooks] = useState<BookType[]>([]);
+  const [books, setBooks] = useRecoilState<BookType[]>(bookAtom);
   const [page, setPage] = useState<number>(1);
   const { isLoading, data, error } = useQuery({
     queryKey: ["books"],
