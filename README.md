@@ -23,3 +23,7 @@ $ npm run dev
 # production mode
 $ npm run build
 ```
+
+## App Home Path
+
+http://localhost:3000/books

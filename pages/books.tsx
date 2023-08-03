@@ -6,35 +6,24 @@ import Card from "@/components/Card";
 import Link from "next/link";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useRouter } from "next/router";
+import { BookType } from "@/types/BookType";
 
 const endPoint = `http://15.165.74.54:3000/?page=`;
-//const endPoint = `https://dummyjson.com/todos`;
 
-type Book = {
-  title: string;
-  description: string;
-  discountRate: number;
-  coverImage: string;
-  price: number;
-};
 function Books() {
   const [hasMore, setHasMore] = useState(true);
-  const [books, setBooks] = useState<Book[]>([]);
+  const [books, setBooks] = useState<BookType[]>([]);
   const [page, setPage] = useState<number>(1);
   const { isLoading, data, error } = useQuery({
     queryKey: ["books"],
     queryFn: async () =>
       await axios
-        .get<Book[]>(endPoint + page)
+        .get<BookType[]>(endPoint + page)
         .then((res) => {
-          console.log("success happed useQuery");
-          console.dir(res);
-          //setBooks(res.data);
           if (res.data !== "") return res.data.data;
           else return [];
         })
         .catch((error) => {
-          console.log("something happ");
           console.log(error);
         }),
   });
@@ -47,36 +36,24 @@ function Books() {
   async function fetchMoreData() {
     setPage(page + 1);
     const url = endPoint + (page + 1);
-    console.log("page : ", url);
     await axios
-      .get<Book[]>(url)
+      .get<BookType[]>(url)
       .then((res) => {
-        console.log("success happed");
-        console.log("-- in fetchMoreData");
-        console.dir(res);
-        console.log("-- ----");
-        //const a: any[] = res.data.data;
         if (res.data === "") setHasMore(false);
         else setBooks([...books, ...res.data.data]);
       })
       .catch((error) => {
-        console.log("something happ");
         console.log(error);
       });
   }
 
   useEffect(() => {
     if (data) setBooks(data);
-    console.log("-- in useEffect");
-    console.dir(data);
-    console.log("-- ----");
   }, [isLoading]);
 
   if (isLoading) return <span>Loading...</span>;
 
   if (error instanceof Error) return <div>{error.message}</div>;
-  //if (isError) return <span>Error: happend</span>;
-  //console.log(books);
 
   return (
     <>
@@ -97,9 +74,15 @@ function Books() {
             hasMore={hasMore}
             scrollThreshold={0.8}
             loader={<p>...</p>}>
-            {books?.map((bk: Book, i: number) => (
+            {books?.map((bk: BookType, i: number) => (
               <Link href={`/1/detail`} key={i}>
-                <Card key={i} title="레이블라우스" discount={bk.discountRate} cover={bk.coverImage} price={bk.price} />
+                <Card
+                  key={i}
+                  title="레이블라우스"
+                  discountRate={bk.discountRate}
+                  coverImage={bk.coverImage}
+                  price={bk.price}
+                />
               </Link>
             ))}
           </InfiniteScroll>
