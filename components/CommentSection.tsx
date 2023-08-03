@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Comment from "./Comment";
 import { CommentType } from "@/types/CommentType";
+import { commentAtom } from "@/recoil/commentAtom";
+import { useRecoilState } from "recoil";
 
 function CommentSection() {
-  const [data, setData] = useState<CommentType[]>([]);
   const [msg, setMsg] = useState("");
+  const [commentList, setCommentList] = useRecoilState<CommentType[]>(commentAtom);
 
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setMsg(e.target.value);
@@ -17,7 +19,7 @@ function CommentSection() {
       time: 1,
       message: msg,
     };
-    setData([...data, com]);
+    setCommentList([...commentList, com]);
     setMsg("");
   };
 
@@ -28,7 +30,7 @@ function CommentSection() {
         time: 1,
         message: msg,
       };
-      setData([...data, com]);
+      setCommentList([...commentList, com]);
       setMsg("");
     }
   };
@@ -45,7 +47,7 @@ function CommentSection() {
         <div className="pl-10">
           <Comment name="ㅇㅅㅇ" time={1} message="오 대박! 라이브 리뷰 오늘 올라온대요? 챙겨봐야겠다" />
         </div>
-        {data?.map((com: CommentType, i: number) => (
+        {commentList?.map((com: CommentType, i: number) => (
           <Comment key={i} name="안녕 나 응애" time={1} message={com.message} />
         ))}
         <div className="flex py-10 w-full">

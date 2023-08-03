@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import Card from "@/components/Card";
 import Link from "next/link";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { useRouter } from "next/router";
 
 const endPoint = `http://15.165.74.54:3000/?page=`;
 //const endPoint = `https://dummyjson.com/todos`;
@@ -37,6 +38,11 @@ function Books() {
           console.log(error);
         }),
   });
+
+  const router = useRouter();
+  const handleRefresh = () => {
+    router.reload();
+  };
 
   async function fetchMoreData() {
     setPage(page + 1);
@@ -79,7 +85,7 @@ function Books() {
           <span className="text-xl font-bold flex justify-center pt-5 pb-5">Books</span>
         </div>
         <Link href="/books" className="flex flex-col justify-center">
-          <div className="bg-gray-300 circle"></div>
+          <div onClick={handleRefresh} className="bg-gray-300 circle"></div>
         </Link>
       </div>
 
